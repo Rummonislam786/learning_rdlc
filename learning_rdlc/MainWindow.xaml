@@ -1,0 +1,30 @@
+﻿<Window x:Class="learning_rdlc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:learning_rdlc"
+        xmlns:mrv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.Winforms" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnshowrpt" Content="Show report" Height="25" Width="90" Click="btnshowrpt_Click"
+                            Margin="0,0,100,0"/>
+                    <ComboBox x:Name="cbSelect" Width="120" />
+                </StackPanel>
+                <WindowsFormsHost Height="250" Width="500">
+                    <mrv:ReportViewer x:Name="rptview" />
+                </WindowsFormsHost>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="20,0,0,0">
+                <Button Width="100" Height="25" Content="Show data" Margin="0,0,0,10" Click="Button_Click"/>
+                <DataGrid Width="250" x:Name="stdndgv1"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
